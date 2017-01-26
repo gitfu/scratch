@@ -1,5 +1,4 @@
 <urlset>
-	
 	<url>
 	    <loc></loc>
 	    <lastmod></lastmod>
@@ -8,11 +7,10 @@
 	    <video>
 	        <content_loc></content_loc>
 	    	<thumbnail_loc></thumbnail_loc>
-		<title>n</title>
+		<title></title>
 		<description></description>
 		<publication_date></publication_date>
 		<family_friendly></family_friendly>
 	    </video>
 	</url>
-	
 </urlset>  
