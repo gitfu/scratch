@@ -32,16 +32,10 @@ type Vid struct {
 	Desc    string `xml:"description"`
 }
 
-func (v Vid) toXMLString() {
-	// Vid struct method to print struct values as xml
-	bytes, err := xml.Marshal(v)
-	chk(err)
-	fmt.Printf("\n\n%s\n", string(bytes))
-}
-
 func (v Vid) show() {
 	// Vid Struct method to print a Vid struct's values
-	fmt.Printf("\ntitle:\t%s\nContent location:\t%s\nDescription:\t%s\n\n", v.Title, v.Content, v.Desc)
+	fmt.Printf("\nTitle:\t%s\nContent:\t%s\nDesc:\t%s\n\n",
+		   			v.Title, v.Content, v.Desc)
 }
 
 func chk(err error) {
@@ -65,7 +59,6 @@ func main() {
 	var count = 0
 	for _, vurl := range u.VUrlList {
 		v := vurl.Video
-		v.toXMLString()
 		v.show()
 		fmt.Printf("video # %d", count)
 		count++
