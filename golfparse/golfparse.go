@@ -12,34 +12,35 @@ import (
 const sitemap string = "http://golfchannel.com/sitemap_video.xml"
 
 // This represents <urlset>
+
 type UrlSet struct {
 	VUrlList []Vurl `xml:"url"` //see Vurl struct
 }
 
-type Vurl struct {
 // This represents  a single <url> element,
 // you can pick and choose which child elements to include
+type Vurl struct {
 	Loc     string `xml:"loc"`
 	LastMod string `xml:"lastmod"`
 	Video   Vid    `xml:"video"` // see Vid struct
 }
 
+// this represents a single <video> elememnt
+// Title , Content, and Desc are child node values
 type Vid struct {
-	// this represents a single <video> elememnt
-	// Title , Content, and Desc are child node values
 	Title   string `xml:"title"`
 	Content string `xml:"content_loc"`
 	Desc    string `xml:"description"`
 }
 
+// Vid Struct method to print a Vid struct's values
 func (v Vid) show() {
-	// Vid Struct method to print a Vid struct's values
 	fmt.Printf("\nTitle:\t%s\nContent:\t%s\nDesc:\t%s\n\n",
 		v.Title, v.Content, v.Desc)
 }
 
+// function to check errors
 func chk(err error) {
-	// function to check errors
 	if err != nil {
 		panic(err)
 	}
