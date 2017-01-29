@@ -35,7 +35,7 @@ type Vid struct {
 func (v Vid) show() {
 	// Vid Struct method to print a Vid struct's values
 	fmt.Printf("\nTitle:\t%s\nContent:\t%s\nDesc:\t%s\n\n",
-		   			v.Title, v.Content, v.Desc)
+		v.Title, v.Content, v.Desc)
 }
 
 func chk(err error) {
