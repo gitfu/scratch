@@ -1,0 +1,28 @@
+[
+	{"name": "low480", 
+	"aspect": "480:360", 
+	"framerate": 15.0, 
+	"vbitrate": "365k",
+	"bufsize": "800k",
+	 "maxrate": "450k", 
+	 "abitrate": "64k", 
+	 "bandwidth": 432000, 
+	 "m3u8": "low480v.m3u8",
+	  "stanza":""},
+
+{"name": "low640", "aspect": "640:360", "framerate": 29.97 ,"vbitrate": "730k",
+	"bufsize": "1600k", "maxrate": "800k", "abitrate": "64k", "bandwidth": 784000,  "stanza":""}
+
+,{"name": "med768", "aspect": "768:432", "framerate":29.97, "vbitrate": "1100k",
+	"bufsize": "2200k", "maxrate": "1300k", "abitrate": "96k", "bandwidth": 1127000, "stanza":""}
+
+,{"name": "med960", "aspect": "960:540", "framerate":29.97, "vbitrate": "2000k",
+	"bufsize": "4400k", "maxrate": "2200k", "abitrate": "96k", "bandwidth": 195100, "stanza":""}
+
+,{"name": "hd720", "aspect": "1280:720", "framerate": 29.97, "vbitrate": "3000k",
+	"bufsize": "6000k", "maxrate": "3200k", "abitrate": "128k", "bandwidth": 4224000,  "stanza":""}
+
+,{"name": "hd1080", "aspect": "1920:1080", "framerate": 29.97, "vbitrate": "7800k",
+	"bufsize": "15600k", "maxrate": "8200k", "abitrate": "128k", "bandwidth": 7483000,  "stanza":""}
+	]
+	
