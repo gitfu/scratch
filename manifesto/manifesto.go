@@ -17,6 +17,9 @@ var toplevel string
 var jasonfile = `./hls.json`
 
 var vcodec = "-c:v libx264 -x264-params no-scenecut=1 "
+
+// I used aac instead of the proper fdk acc because not all distros
+// have an ffmpeg with fdk aac included.
 var acodec = " -c:a aac"
 var hls = "-hls_time 2 -hls_list_size 0 -hls_flags round_durations"
 
@@ -68,7 +71,6 @@ func (v *Variant) start() {
 	dest := v.mkDest()
 	fmt.Println("Starting ", dest)
 	cmd := v.mkCmd()
-	fmt.Println(cmd)
 	v.runCmd(cmd)
 	v.mkStanza()
 }
@@ -113,7 +115,5 @@ func main() {
 	flag.Parse()
 	if (infile != "") && (toplevel != "") {
 		mkAll(variants)
-	} else {
-		flag.PrintDefaults()
 	}
 }
