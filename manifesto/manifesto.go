@@ -17,13 +17,13 @@ var toplevel string
 var jasonfile = `./hls.json`
 
 var vcodec = "-c:v libx264 -x264-params no-scenecut=1 "
-
-// I used aac instead of the proper fdk acc because not all distros
-// have an ffmpeg with fdk aac included.
+// I used aac instead of the proper fdk acc because not all distros 
+// have an ffmpeg with fdk aac included. 
 var acodec = " -c:a aac"
 var hls = "-hls_time 2 -hls_list_size 0 -hls_flags round_durations"
 
 type Variant struct {
+// Hls Variant struct 
 	Name      string  `json:"name"`
 	Aspect    string  `json:"aspect"`
 	Framerate float64 `json:"framerate"`
@@ -37,7 +37,7 @@ type Variant struct {
 
 // This Variant method assembles the ffmpeg command
 func (v *Variant) mkCmd() string {
-	ffbase := fmt.Sprintf("ffmpeg -i %s -vf scale=%s ", infile, v.Aspect)
+	ffbase := fmt.Sprintf("ffmpeg -i %s -vf scale=%s ",infile, v.Aspect)
 	ffvcodec := fmt.Sprintf("%v-g %v -r %v ", vcodec, v.Framerate, v.Framerate)
 	ffvrate := fmt.Sprintf(" -b:v %s  -maxrate %s -bufsize %s  ", v.Vbitrate, v.Maxrate, v.Bufsize)
 	fftail := fmt.Sprintf(" %s -b:a %s %s %s/%s/index.m3u8", acodec, v.Abitrate, hls, toplevel, v.Name)
@@ -83,12 +83,10 @@ func dataToVariants() []Variant {
 	json.Unmarshal(data, &variants)
 	return variants
 }
-
 // Generic catchall error checking
 func chk(err error) {
 	if err != nil {
 		panic(err)
-		os.Exit(-1)
 	}
 }
 
