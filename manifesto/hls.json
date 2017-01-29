@@ -1,14 +1,6 @@
 [
-	{"name": "low480", 
-	"aspect": "480:360", 
-	"framerate": 15.0, 
-	"vbitrate": "365k",
-	"bufsize": "800k",
-	 "maxrate": "450k", 
-	 "abitrate": "64k", 
-	 "bandwidth": 432000, 
-	 "m3u8": "low480v.m3u8",
-	  "stanza":""},
+{"name": "low480", "aspect": "480:360", "framerate": 15.0, "vbitrate": "365k",
+	"bufsize": "800k","maxrate": "450k", "abitrate": "64k", "bandwidth": 432000,  "stanza":""},
 
 {"name": "low640", "aspect": "640:360", "framerate": 29.97 ,"vbitrate": "730k",
 	"bufsize": "1600k", "maxrate": "800k", "abitrate": "64k", "bandwidth": 784000,  "stanza":""}
@@ -24,5 +16,5 @@
 
 ,{"name": "hd1080", "aspect": "1920:1080", "framerate": 29.97, "vbitrate": "7800k",
 	"bufsize": "15600k", "maxrate": "8200k", "abitrate": "128k", "bandwidth": 7483000,  "stanza":""}
-	]
+]
 	
