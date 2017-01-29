@@ -3,8 +3,9 @@
  
  Usage:
  
- go run manifesto.go
   -d string
     	top level directory for hls files
   -i string
     	Video file to segment
+     
+      go run manifesto.go -d myDir -i video.ts
