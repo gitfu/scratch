@@ -12,13 +12,13 @@ import (
 const sitemap string = "http://golfchannel.com/sitemap_video.xml"
 
 type UrlSet struct {
-	// This represents <urlset>
+// This represents <urlset>
 	VUrlList []Vurl `xml:"url"` //see Vurl struct
 }
 
 type Vurl struct {
-	// This represents  a single <url> element,
-	// you can pick and choose which child elements to include
+// This represents  a single <url> element,
+// you can pick and choose which child elements to include
 	Loc     string `xml:"loc"`
 	LastMod string `xml:"lastmod"`
 	Video   Vid    `xml:"video"` // see Vid struct
