@@ -11,8 +11,8 @@ import (
 // 35 MB  xml file, so big it will choke your browser
 const sitemap string = "http://golfchannel.com/sitemap_video.xml"
 
-type UrlSet struct {
 // This represents <urlset>
+type UrlSet struct {
 	VUrlList []Vurl `xml:"url"` //see Vurl struct
 }
 
