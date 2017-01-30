@@ -42,7 +42,6 @@ func chk(err error) {
 	// function to check errors
 	if err != nil {
 		panic(err)
-		os.Exit(-1)
 	}
 }
 
