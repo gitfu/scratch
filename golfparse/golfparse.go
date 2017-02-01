@@ -10,12 +10,12 @@ import (
 // 35 MB  xml file, so big it will choke your browser
 const sitemap string = "http://golfchannel.com/sitemap_video.xml"
 
-// This represents <urlset>
+// UrlSet represents <urlset>
 type UrlSet struct {
 	VUrlList []Vurl `xml:"url"` //see Vurl struct
 }
 
-// This represents  a single <url> element,
+// Vurl represents  a single <url> element,
 // you can pick and choose which child elements to include
 type Vurl struct {
 	Loc     string `xml:"loc"`
@@ -23,7 +23,7 @@ type Vurl struct {
 	Video   Vid    `xml:"video"` // see Vid struct
 }
 
-// this represents a single <video> elememnt
+// Vid represents a single <video> elememnt
 // Title , Content, and Desc are child node values
 type Vid struct {
 	Title   string `xml:"title"`
