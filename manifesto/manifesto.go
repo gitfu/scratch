@@ -23,9 +23,8 @@ var vcodec = "-c:v libx264 -x264-params no-scenecut=1 "
 var acodec = " -c:a aac"
 var hls = "-hls_time 2 -hls_list_size 0 -hls_flags round_durations"
 
-// Hls Variant struct
+// Variant struct for HLS variants
 type Variant struct {
-	// hls variant struct
 	Name      string  `json:"name"`
 	Aspect    string  `json:"aspect"`
 	Framerate float64 `json:"framerate"`
