@@ -7,12 +7,18 @@ import (
 	"net/http"
 )
 
-// 35 MB  xml file, so big it will choke your browser
 const sitemap string = "http://golfchannel.com/sitemap_video.xml"
 
 // UrlSet represents <urlset>
 type UrlSet struct {
 	VUrlList []Vurl `xml:"url"` //see Vurl struct
+}
+//method to show the details for all of the videos
+func (u *UrlSet) showAll() {
+	for i, vurl := range u.VUrlList {
+		v := vurl.Video
+		v.show(i)
+	}
 }
 
 // Vurl represents  a single <url> element,
@@ -32,7 +38,8 @@ type Vid struct {
 }
 
 // Vid Struct method to print a Vid struct's values
-func (v Vid) show() {
+func (v *Vid) show(i int) {
+	fmt.Printf("video # %d", i)
 	fmt.Printf("\nTitle:\t%s\nContent:\t%s\nDesc:\t%s\n\n",
 		v.Title, v.Content, v.Desc)
 }
@@ -45,20 +52,14 @@ func chk(err error) {
 }
 
 func main() {
+	var u UrlSet
 	res, err := http.Get(sitemap)
 	chk(err)
-	// keep file open so we can read it
 	defer res.Body.Close()
-	xmlFile, err := ioutil.ReadAll(res.Body)
+	xmlBytes, err := ioutil.ReadAll(res.Body)
 	chk(err)
-	var u UrlSet
 	// decode the xml into u, a UrlSet struct
-	xml.Unmarshal(xmlFile, &u)
-	var count = 0
-	for _, vurl := range u.VUrlList {
-		v := vurl.Video
-		v.show()
-		fmt.Printf("video # %d", count)
-		count++
-	}
+	xml.Unmarshal(xmlBytes, &u)
+	u.showAll()
+
 }
