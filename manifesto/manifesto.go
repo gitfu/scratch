@@ -73,6 +73,7 @@ func (v *Variant) start() {
 	dest := v.mkDest()
 	fmt.Println("Starting ", dest)
 	cmd := v.mkCmd()
+	fmt.Printf(cmd)
 	//v.runCmd(cmd)
 	v.mkStanza()
 }
