@@ -14,7 +14,6 @@ import (
 var infile string
 var toplevel string
 
-var m3u8stanza = `#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=%v, RESOLUTION=%v, CODECS="avc1.42e00a,mp4a.40.2"`
 var jasonfile = `./hls.json`
 
 var vcodec = "-c:v libx264 -x264-params no-scenecut=1 "
@@ -34,13 +33,13 @@ type Variant struct {
 	Maxrate   string  `json:"maxrate"`
 	Abitrate  string  `json:"abitrate"`
 	Bandwidth int     `json:"bandwidth"`
-	Stanza    string  `json:"Stanza"`
+	Stanza    string  `json:"stanza"`
 }
 
 // This Variant method assembles the ffmpeg command
 func (v *Variant) mkCmd() string {
-	ffbase := fmt.Sprintf("ffmpeg -i %s -vf scale=%s ", infile, v.Aspect)
-	ffvcodec := fmt.Sprintf("%v-g %v -r %v ", vcodec, v.Framerate, v.Framerate)
+	ffbase := fmt.Sprintf("ffmpeg  -y -i %s -vf scale=%s ", infile, v.Aspect)
+	ffvcodec := fmt.Sprintf("%v -g %v -r %v ", vcodec, v.Framerate, v.Framerate)
 	ffvrate := fmt.Sprintf(" -b:v %s  -maxrate %s -bufsize %s  ", v.Vbitrate, v.Maxrate, v.Bufsize)
 	fftail := fmt.Sprintf(" %s -b:a %s %s %s/%s/index.m3u8", acodec, v.Abitrate, hls, toplevel, v.Name)
 	cmd := fmt.Sprintf("%s%s%s%s", ffbase, ffvcodec, ffvrate, fftail)
