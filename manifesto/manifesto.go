@@ -14,6 +14,7 @@ import (
 var infile string
 var toplevel string
 
+var m3u8stanza = `#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=%v, RESOLUTION=%v, CODECS="avc1.42e00a,mp4a.40.2"`
 var jasonfile = `./hls.json`
 
 var vcodec = "-c:v libx264 -x264-params no-scenecut=1 "
