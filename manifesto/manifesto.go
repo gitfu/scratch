@@ -33,7 +33,7 @@ type Variant struct {
 	Maxrate   string  `json:"maxrate"`
 	Abitrate  string  `json:"abitrate"`
 	Bandwidth int     `json:"bandwidth"`
-	Stanza    string  `json:"stanza"`
+	Stanza    string  `json:"Stanza"`
 }
 
 // This Variant method assembles the ffmpeg command
@@ -65,6 +65,7 @@ func (v *Variant) mkDest() string {
 // CODECS="avc1.42e00a,mp4a.40.2" hd1920/index.m3u8
 func (v *Variant) mkStanza() {
 	v.Stanza = fmt.Sprintf(`#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=%v, RESOLUTION=%v, CODECS="avc1.42e00a,mp4a.40.2"`, v.Bandwidth, v.Aspect)
+	fmt.Printf(v.Stanza)
 }
 
 // Start transcoding the variant
@@ -72,7 +73,7 @@ func (v *Variant) start() {
 	dest := v.mkDest()
 	fmt.Println("Starting ", dest)
 	cmd := v.mkCmd()
-	v.runCmd(cmd)
+	//v.runCmd(cmd)
 	v.mkStanza()
 }
 
