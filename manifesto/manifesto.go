@@ -16,7 +16,7 @@ var toplevel string
 
 var jasonfile = `./hls.json`
 
-var vcodec = "-c:v libx264 -x264-params no-scenecut=1 "
+var vcodec = "-c:v libx264 -x264-params no-scenecut=1 -crf 23"
 
 // I used aac instead of the proper fdk acc because not all distros
 // have an ffmpeg with fdk aac included.
