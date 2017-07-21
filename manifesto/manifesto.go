@@ -16,7 +16,7 @@ var toplevel string
 
 var jasonfile = `./hls.json`
 
-var vcodec = "-c:v libx264 -x264-params no-scenecut=1 -crf 23"
+var vcodec = "-c:v libx264 -x264-params no-scenecut=1 nal-hrd=cbr -crf 23"
 
 // I used aac instead of the proper fdk acc because not all distros
 // have an ffmpeg with fdk aac included.
@@ -40,7 +40,7 @@ type Variant struct {
 func (v *Variant) mkCmd() string {
 	ffbase := fmt.Sprintf("ffmpeg  -y -i %s -vf scale=%s ", infile, v.Aspect)
 	ffvcodec := fmt.Sprintf("%v -g %v -r %v ", vcodec, v.Framerate, v.Framerate)
-	ffvrate := fmt.Sprintf(" -b:v %s  -maxrate %s -bufsize %s  ", v.Vbitrate, v.Maxrate, v.Bufsize)
+	ffvrate := fmt.Sprintf(" -b:v %s  -minrate %s -maxrate %s -bufsize %s  ", v.Vbitrate,v.Vbitrate, v.Vbitrate, v.Bufsize)
 	fftail := fmt.Sprintf(" %s -b:a %s %s %s/%s/index.m3u8", acodec, v.Abitrate, hls, toplevel, v.Name)
 	cmd := fmt.Sprintf("%s%s%s%s", ffbase, ffvcodec, ffvrate, fftail)
 	return cmd
