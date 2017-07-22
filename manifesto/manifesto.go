@@ -16,12 +16,12 @@ var toplevel string
 
 var jasonfile = `./hls.json`
 
-var vcodec = "-c:v libx264 -x264-params no-scenecut=1 -crf 23"
+var vcodec = "-c:v libx264 -x264-params no-scenecut=1 -x264-params  -nal_hrd=cbr -crf 27"
 
 // I used aac instead of the proper fdk acc because not all distros
 // have an ffmpeg with fdk aac included.
 var acodec = " -c:a aac"
-var hls = "-hls_time 2 -hls_list_size 0 -hls_flags round_durations"
+var hls = "-hls_list_size 0"
 
 // Variant struct for HLS variants
 type Variant struct {
@@ -30,7 +30,7 @@ type Variant struct {
 	Framerate float64 `json:"framerate"`
 	Vbitrate  string  `json:"vbitrate"`
 	Bufsize   string  `json:"bufsize"`
-	Maxrate   string  `json:"maxrate"`
+	//Maxrate   string  `json:"maxrate"`
 	Abitrate  string  `json:"abitrate"`
 	Bandwidth int     `json:"bandwidth"`
 	Stanza    string  `json:"Stanza"`
@@ -64,7 +64,7 @@ func (v *Variant) mkDest() string {
 // #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=7483000,RESOLUTION=1920:1080,
 // CODECS="avc1.42e00a,mp4a.40.2" hd1920/index.m3u8
 func (v *Variant) mkStanza() {
-	v.Stanza = fmt.Sprintf(`#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=%v, RESOLUTION=%v, CODECS="avc1.42e00a,mp4a.40.2"`, v.Bandwidth, v.Aspect)
+	v.Stanza = fmt.Sprintf(`#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=%v, RESOLUTION=%v"`, v.Bandwidth, v.Aspect)
 	fmt.Printf(v.Stanza)
 }
 
