@@ -31,6 +31,20 @@ the duplicates are obvious.
 
 ```python
 lunches={
+1:["CheesePizza","PepperoniPizza","BuffaloChickenPizza"
+,"Chickenn'Waffles","PhillyChickenSub","FreshSeasonalSalads",
+"Home-StyleCroissantSandwiches","CinnamonApples"],
+2:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
+"ChickenSpicySandwich","CheesyGrilledCheese","FreshSeasonalSalads",
+"ChickenClubonCiabatta","YogurtBasket","BakedSweetPotato"
+,"TomatoSoup","FrozenFruitCup"],
+5:["CheesePizza","PepperoniPizza","FourMeatPizza",
+"BallParkHotDog","BBQPlate","FreshSeasonalSalads",
+"DeliFreshSubs","RealFruitSmoothies","PotatoSpirals",
+"Coleslaw","PineappleTidbits"],
+6:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
+"CrispyChickenTenders","AsianRiceBowls","FreshSeasonalSalads",
+"SpicyChickenSalad&Saltines","YogurtParfait","Carrot&CelerySticks","DriedFruit"],
 7:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
 "ClassicChickenNuggets","ChickenPizzaQuesadilla",
 "FreshSeasonalSalads","ChickenClubonCiabatta",
@@ -158,9 +172,22 @@ the new format is only 62% of the original size.
 
 
 
-to generate the json file
+to generate the js file
 
 ```python
->>> with open("menu.json","w+") as outfile:
+>>> with open("menu.js","w+") as outfile:
         print("var unique=",json.dumps(unique),"\nvar idxlunches=",json.dumps(idxlunches),file=outfile)
 ```
+
+
+
+In a webpage, I would do something like 
+
+function swap(idx){ 
+	return unique[idx]
+}
+function swapDay(day){ 
+	idxlunches[day]=idxlunches[day].map(swap)
+}
+
+and call today's menu with: 
