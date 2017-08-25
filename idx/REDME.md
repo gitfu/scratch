@@ -5,8 +5,12 @@ trying indexing it to reduce the size.
 The best way to explain is to do an example. 
 
 Say we have data for school lunches, 
+
 I'll do this part in Python
 ,so call it a dictionary.
+```python
+lunches={}
+```
 
 The key is the day of the month,
 
@@ -18,44 +22,66 @@ Like this:
 
 ```python
 # key : value
-7:["CheesePizza","PepperoniPizza","BuffaloChickenPizza"
+lunches ={ 7:["CheesePizza","PepperoniPizza","BuffaloChickenPizza"
 ,"ClassicChickenNuggets","ChickenPizzaQuesadilla","FreshSeasonalSalads"
 ,"ChickenClubonCiabatta","YogurtBasket","RefriedBeans","BakedSweetPotato","FrozenFruitCup"] }
 ```
-When you have a bunch of days together, the duplicates are obvious.
-Like this:
+When you have a bunch of days together, 
+the duplicates are obvious.
+
 ```python
 lunches={
-7:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","ClassicChickenNuggets","ChickenPizzaQuesadilla",
-	"FreshSeasonalSalads","ChickenClubonCiabatta","YogurtBasket","RefriedBeans","BakedSweetPotato","FrozenFruitCup"],
-8:["CheesePizza","PepperoniPizza","FourMeatPizza","Gwinnett'sBestBurger","ItalianTrio","FreshSeasonalSalads",
-	"DeliFreshSubs","SpinachDip&Chips","RealFruitSmoothies","GAGrownGreenBeans","TropicalFruitSalad"],
-9:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","DrumDay!","MashedPotatoBowls","FreshSeasonalSalads",
-"ClassicChickenSalad&Saltines","YogurtParfait","SteamedCollardGreens","DriedFruit"],
-10:["CheesePizza","PepperoniPizza","FlavortotheMaxSticks","MiniCornDogs","NEW!ChickenAsianBites",
-"FreshSeasonalSalads","DeliFreshSubs","RealFruitSmoothies","SteamedCarrots","NEW!Minh'sEggRoll","Mango"],
-11:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","Chickenn'Waffles","PhillyChickenSub","FreshSeasonalSalads",
+7:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
+"ClassicChickenNuggets","ChickenPizzaQuesadilla",
+"FreshSeasonalSalads","ChickenClubonCiabatta",
+"YogurtBasket","RefriedBeans","BakedSweetPotato","FrozenFruitCup"],
+8:["CheesePizza","PepperoniPizza","FourMeatPizza",
+"Gwinnett'sBestBurger","ItalianTrio","FreshSeasonalSalads",
+"DeliFreshSubs","SpinachDip&Chips","RealFruitSmoothies",
+"GAGrownGreenBeans","TropicalFruitSalad"],
+9:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
+"DrumDay!","MashedPotatoBowls","FreshSeasonalSalads",
+"ClassicChickenSalad&Saltines","YogurtParfait",
+"SteamedCollardGreens","DriedFruit"],
+10:["CheesePizza","PepperoniPizza","FlavortotheMaxSticks",
+"MiniCornDogs","NEW!ChickenAsianBites",
+"FreshSeasonalSalads","DeliFreshSubs",
+"RealFruitSmoothies","SteamedCarrots","NEW!Minh'sEggRoll","Mango"],
+11:["CheesePizza","PepperoniPizza","BuffaloChickenPizza"
+,"Chickenn'Waffles","PhillyChickenSub","FreshSeasonalSalads",
 "Home-StyleCroissantSandwiches","CinnamonApples"],
-14:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","ChickenSpicySandwich","CheesyGrilledCheese","FreshSeasonalSalads",
-"ChickenClubonCiabatta","YogurtBasket","BakedSweetPotato","TomatoSoup","FrozenFruitCup"],
-15:["CheesePizza","PepperoniPizza","FourMeatPizza","BallParkHotDog","BBQPlate","FreshSeasonalSalads",
-"DeliFreshSubs","RealFruitSmoothies","PotatoSpirals","Coleslaw","PineappleTidbits"],
-16:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","CrispyChickenTenders",
-	"AsianRiceBowls","FreshSeasonalSalads","SpicyChickenSalad&Saltines","YogurtParfait","Carrot&CelerySticks","DriedFruit"],
-17:["CheesePizza","PepperoniPizza","FlavortotheMaxSticks","GrilledChickenSandwich","FiestaNachos",
-	"FreshSeasonalSalads","DeliFreshSubs","BlackBeanEmpanadas","RealFruitSmoothies","BlackBeans","Doritos","MandarinOranges"],
-18:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","NEW!FrenchToast&Sausage","NEW!SpaghettiMeatballBowl",
-		"FreshSeasonalSalads","Home-StyleCroissantSandwiches","TropicalFruitSalad"],
-21:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","BonelessWings","KoreanMeatballSub",
-	"FreshSeasonalSalads","ChickenClubonCiabatta","YogurtBasket","GAGrownGreenBeans","BakedSweetPotato","FrozenFruitCup"],
+14:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
+"ChickenSpicySandwich","CheesyGrilledCheese","FreshSeasonalSalads",
+"ChickenClubonCiabatta","YogurtBasket","BakedSweetPotato"
+,"TomatoSoup","FrozenFruitCup"],
+15:["CheesePizza","PepperoniPizza","FourMeatPizza",
+"BallParkHotDog","BBQPlate","FreshSeasonalSalads",
+"DeliFreshSubs","RealFruitSmoothies","PotatoSpirals",
+"Coleslaw","PineappleTidbits"],
+16:["CheesePizza","PepperoniPizza","BuffaloChickenPizza",
+"CrispyChickenTenders","AsianRiceBowls","FreshSeasonalSalads",
+"SpicyChickenSalad&Saltines","YogurtParfait","Carrot&CelerySticks","DriedFruit"],
+17:["CheesePizza","PepperoniPizza","FlavortotheMaxSticks","GrilledChickenSandwich",
+"FiestaNachos","FreshSeasonalSalads","DeliFreshSubs","BlackBeanEmpanadas",
+"RealFruitSmoothies","BlackBeans","Doritos","MandarinOranges"],
+18:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","NEW!FrenchToast&Sausage",
+"NEW!SpaghettiMeatballBowl","FreshSeasonalSalads",
+"Home-StyleCroissantSandwiches","TropicalFruitSalad"],
+21:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","BonelessWings",
+"KoreanMeatballSub","FreshSeasonalSalads","ChickenClubonCiabatta",
+"YogurtBasket","GAGrownGreenBeans","BakedSweetPotato","FrozenFruitCup"],
 22:["CheesePizza","PepperoniPizza","FourMeatPizza","BaconCheeseburger","ChickenSoftTacos",
-	"FreshSeasonalSalads","DeliFreshSubs","MexiPizza","RealFruitSmoothies","NEW!HappyCorn","MexiRice","MexicanFruitCup"],
+"FreshSeasonalSalads","DeliFreshSubs","MexiPizza","RealFruitSmoothies",
+"NEW!HappyCorn","MexiRice","MexicanFruitCup"],
 23:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","BlackAngusSliderDogs","NEW!HawaiianPanini",
-	"FreshSeasonalSalads","FruityChickenSalad&Saltines","YogurtParfait","BakedBeans","CheesyBroccoli","DriedFruit"],
+"FreshSeasonalSalads","FruityChickenSalad&Saltines","YogurtParfait",
+"BakedBeans","CheesyBroccoli","DriedFruit"],
 24:["CheesePizza","PepperoniPizza","FlavortotheMaxSticks","BBQChickenSandwichonCiabatta",
-	"LasagnaBolognese","FreshSeasonalSalads","DeliFreshSubs","VeggieLasagnaRoll","RealFruitSmoothies","SteamedCarrots"]
+"LasagnaBolognese","FreshSeasonalSalads","DeliFreshSubs",
+"VeggieLasagnaRoll","RealFruitSmoothies","SteamedCarrots"]
 ,25:["CheesePizza","PepperoniPizza","BuffaloChickenPizza","Chickenn'Waffles",
-	"FreshSeasonalSalads","Home-StyleCroissantSandwiches","Plantains","CinnamonApples"]
+"FreshSeasonalSalads","Home-StyleCroissantSandwiches",
+"Plantains","CinnamonApples"]
   }
   ```
   
