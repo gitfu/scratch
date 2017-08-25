@@ -251,9 +251,9 @@ is only 1861 characters.
 
 the new format is just 62% of the original data size.
 
-##10% smaller would pique my interest.
+## 10% smaller piques my interest.
 
-##38% smaller makes me giddy everytime.
+## 38% smaller makes me giddy.
 
 ```python
 >>> unique
