@@ -294,15 +294,18 @@ swapDay(new Date().getDate())
 ```
 
 This is just a short example.
+
 I use this technique when I 
-have ten of thousands of records to include in a web page.
+have ten of thousands of records 
+to include in a web page.
 
 An ordered collection such as a list or an array, 
+
 is very fast, and even faster when accessed via index.
 
-Doing a callback to the server everytime you need data, 
-is just cheesey, and slow, and weak. 
-Don't do that. 
+### Doing a callback to the server everytime you need data, 
+### is just cheesey, and slow, and weak. 
+### Don't do that. 
 
 
 
