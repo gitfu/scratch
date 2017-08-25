@@ -1,12 +1,17 @@
 If you have a lot of duplicate values in your JSON data, 
+
 trying indexing it to reduce the size. 
-The best way to explain what I mean, is to do an example. 
+
+The best way to explain is to do an example. 
 
 Say we have data for school lunches, 
-I'll do this part in Python,so call it a dictionary.
+I'll do this part in Python
+,so call it a dictionary.
 
 The key is the day of the month,
+
 and the value is a list of foods 
+
 available for lunch on that day.
 
 Like this:
