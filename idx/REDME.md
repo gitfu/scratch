@@ -87,9 +87,14 @@ lunches={
   
  
  To remove the duplicates, 
- I am going to make one list of only unique foods
- and a new dictionary with thee same key,
- but the value will be the index of the food in the unique food list 
+ 
+ make one list of only unique foods
+ 
+ and a new dictionary with the same keys,
+ 
+ but the values will be a list 
+ 
+ of the index of the food in the unique food list 
  
  ```python
 
@@ -139,10 +144,19 @@ Looking at character count excluding whitespace characters
 The older format with the lunches dictionary 
 is 2997 characters
 
-The new format with the unque list and idxlunches dictionary,
+The new format with the unique list and idxlunches dictionary,
 is only 1861 characters.
 
 the new format is only 62% of the original size.
+```python
+>>> unique
+['CheesePizza', 'PepperoniPizza', 'BuffaloChickenPizza', 'ClassicChickenNuggets', 'ChickenPizzaQuesadilla', 'FreshSeasonalSalads', 'ChickenClubonCiabatta', 'YogurtBasket', 'RefriedBeans', 'BakedSweetPotato', 'FrozenFruitCup', 'FourMeatPizza', "Gwinnett'sBestBurger", 'ItalianTrio', 'DeliFreshSubs', 'SpinachDip&Chips', 'RealFruitSmoothies', 'GAGrownGreenBeans', 'TropicalFruitSalad', 'DrumDay!', 'MashedPotatoBowls', 'ClassicChickenSalad&Saltines', 'YogurtParfait', 'SteamedCollardGreens', 'DriedFruit', 'FlavortotheMaxSticks', 'MiniCornDogs', 'NEW!ChickenAsianBites', 'SteamedCarrots', "NEW!Minh'sEggRoll", 'Mango', "Chickenn'Waffles", 'PhillyChickenSub', 'Home-StyleCroissantSandwiches', 'CinnamonApples', 'ChickenSpicySandwich', 'CheesyGrilledCheese', 'TomatoSoup', 'BallParkHotDog', 'BBQPlate', 'PotatoSpirals', 'Coleslaw', 'PineappleTidbits', 'CrispyChickenTenders', 'AsianRiceBowls', 'SpicyChickenSalad&Saltines', 'Carrot&CelerySticks', 'GrilledChickenSandwich', 'FiestaNachos', 'BlackBeanEmpanadas', 'BlackBeans', 'Doritos', 'MandarinOranges', 'NEW!FrenchToast&Sausage', 'NEW!SpaghettiMeatballBowl', 'BonelessWings', 'KoreanMeatballSub', 'BaconCheeseburger', 'ChickenSoftTacos', 'MexiPizza', 'NEW!HappyCorn', 'MexiRice', 'MexicanFruitCup', 'BlackAngusSliderDogs', 'NEW!HawaiianPanini', 'FruityChickenSalad&Saltines', 'BakedBeans', 'CheesyBroccoli', 'BBQChickenSandwichonCiabatta', 'LasagnaBolognese', 'VeggieLasagnaRoll', 'Plantains']
+
+>>> idxlunches
+{7: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 8: [0, 1, 11, 12, 13, 5, 14, 15, 16, 17, 18], 9: [0, 1, 2, 19, 20, 5, 21, 22, 23, 24], 10: [0, 1, 25, 26, 27, 5, 14, 16, 28, 29, 30], 11: [0, 1, 2, 31, 32, 5, 33, 34], 14: [0, 1, 2, 35, 36, 5, 6, 7, 9, 37, 10], 15: [0, 1, 11, 38, 39, 5, 14, 16, 40, 41, 42], 16: [0, 1, 2, 43, 44, 5, 45, 22, 46, 24], 17: [0, 1, 25, 47, 48, 5, 14, 49, 16, 50, 51, 52], 18: [0, 1, 2, 53, 54, 5, 33, 18], 21: [0, 1, 2, 55, 56, 5, 6, 7, 17, 9, 10], 22: [0, 1, 11, 57, 58, 5, 14, 59, 16, 60, 61, 62], 23: [0, 1, 2, 63, 64, 5, 65, 22, 66, 67, 24], 24: [0, 1, 25, 68, 69, 5, 14, 70, 16, 28], 25: [0, 1, 2, 31, 5, 33, 71, 34]}
+```
+
+
 
 to generate the json file
 
