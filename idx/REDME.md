@@ -249,7 +249,12 @@ is 2997 characters
 The new format with the unique list and idxlunches dictionary,
 is only 1861 characters.
 
-the new format is only 62% of the original size.
+the new format is just 62% of the original data size.
+
+##10% smaller would pique my interest.
+
+##38% smaller makes me giddy everytime.
+
 ```python
 >>> unique
 ['CheesePizza', 'PepperoniPizza', 'BuffaloChickenPizza', 'ClassicChickenNuggets', 'ChickenPizzaQuesadilla', 'FreshSeasonalSalads', 'ChickenClubonCiabatta', 'YogurtBasket', 'RefriedBeans', 'BakedSweetPotato', 'FrozenFruitCup', 'FourMeatPizza', "Gwinnett'sBestBurger", 'ItalianTrio', 'DeliFreshSubs', 'SpinachDip&Chips', 'RealFruitSmoothies', 'GAGrownGreenBeans', 'TropicalFruitSalad', 'DrumDay!', 'MashedPotatoBowls', 'ClassicChickenSalad&Saltines', 'YogurtParfait', 'SteamedCollardGreens', 'DriedFruit', 'FlavortotheMaxSticks', 'MiniCornDogs', 'NEW!ChickenAsianBites', 'SteamedCarrots', "NEW!Minh'sEggRoll", 'Mango', "Chickenn'Waffles", 'PhillyChickenSub', 'Home-StyleCroissantSandwiches', 'CinnamonApples', 'ChickenSpicySandwich', 'CheesyGrilledCheese', 'TomatoSoup', 'BallParkHotDog', 'BBQPlate', 'PotatoSpirals', 'Coleslaw', 'PineappleTidbits', 'CrispyChickenTenders', 'AsianRiceBowls', 'SpicyChickenSalad&Saltines', 'Carrot&CelerySticks', 'GrilledChickenSandwich', 'FiestaNachos', 'BlackBeanEmpanadas', 'BlackBeans', 'Doritos', 'MandarinOranges', 'NEW!FrenchToast&Sausage', 'NEW!SpaghettiMeatballBowl', 'BonelessWings', 'KoreanMeatballSub', 'BaconCheeseburger', 'ChickenSoftTacos', 'MexiPizza', 'NEW!HappyCorn', 'MexiRice', 'MexicanFruitCup', 'BlackAngusSliderDogs', 'NEW!HawaiianPanini', 'FruityChickenSalad&Saltines', 'BakedBeans', 'CheesyBroccoli', 'BBQChickenSandwichonCiabatta', 'LasagnaBolognese', 'VeggieLasagnaRoll', 'Plantains']
